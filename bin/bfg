@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var args = process.argv.slice(2)
+  , format = require("util").format
+  , path = require("path")
+  , fs = require("fs")
+  , cp = require("child_process")
+  , bfg = path.join(__dirname, "bfg-1.12.3.jar")
+  , cmd = command()
+
+console.info('executing "' + cmd + '"')
+
+function command() {
+  return args.length ? format("java -jar %s %s", bfg, args.join(" "))
+              : format("java -jar %s", bfg)
+}
+
+cp.exec(cmd, { cwd: __dirname }, cb)
+
+function cb(err, stdout, stderr) {
+  if(err) throw err
+
+  console.log(stdout)
+  console.log(stderr)
+}

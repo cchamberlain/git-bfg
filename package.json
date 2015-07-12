@@ -1,0 +1,28 @@
+{
+  "name": "git-bfg",
+  "version": "0.1.0",
+  "description": "Makes getting and using BFG Repo-Cleaner easier.",
+  "main": "bin/bfg",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cchamberlain/git-bfg.git"
+  },
+  "keywords": [
+    "bfg",
+    "cleaner",
+    "git",
+    "repo"
+  ],
+  "author": "Cole Chamberlain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cchamberlain/git-bfg/issues"
+  },
+  "homepage": "https://github.com/cchamberlain/git-bfg#readme",
+  "dependencies": {
+    "lodash": "^3.10.0"
+  }
+}
