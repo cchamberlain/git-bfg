@@ -1,6 +1,6 @@
 {
   "name": "git-bfg",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Makes getting and using BFG Repo-Cleaner easier.",
   "main": "bin/bfg",
   "bin": {
