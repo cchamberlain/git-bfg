@@ -75,3 +75,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+bin/bfg-1.12.3.jar
