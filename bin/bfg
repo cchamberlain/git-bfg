@@ -2,7 +2,6 @@
 
 var args = process.argv.slice(2)
   , format = require("util").format
-  , http = require("http")
   , path = require("path")
   , fs = require("fs")
   , cp = require("child_process")
