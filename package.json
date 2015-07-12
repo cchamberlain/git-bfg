@@ -4,7 +4,8 @@
   "description": "Makes getting and using BFG Repo-Cleaner easier.",
   "main": "bin/bfg",
   "bin": {
-    "bfg": "./bin/bfg"
+    "bfg": "./bin/bfg",
+    "bfg-ls": "./bin/bfg-ls"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,7 +27,8 @@
   },
   "homepage": "https://github.com/cchamberlain/git-bfg#readme",
   "dependencies": {
-    "lodash": "^3.10.0"
+    "lodash": "^3.10.0",
+    "request": "^2.58.0"
   },
   "devDependencies": {
     "request": "^2.58.0"
