@@ -4,17 +4,22 @@ var args = process.argv.slice(2)
   , format = require("util").format
   , path = require("path")
   , fs = require("fs")
-  , cp = require("child_process")
+  , exec = require("child_process").exec
   , bfgUrl = "http://repo1.maven.org/maven2/com/madgag/bfg/1.12.3/bfg-1.12.3.jar"
   , bfgPath = path.join(__dirname, "bfg-1.12.3.jar")
-  , cmd = getCommand()
+  , command = getCommand()
 
-console.info('executing "' + cmd + '"')
+download(function() {
+    exec(command, {cwd: __dirname}, cbCommand);
+});
 
-function download() {
+function download(cb) {
   fs.stat(bfgPath, function(err, stat) {
     if(err) {
-      request(bfgUrl).pipe(fs.createWriteStream(bfgPath))
+        var r = request(bfgUrl).pipe(fs.createWriteStream(bfgPath))
+        r.on('finish', cb);
+    } else {
+        cb();
     }
   })
 }
@@ -24,9 +29,7 @@ function getCommand() {
                       : format("java -jar %s", bfgPath)
 }
 
-cp.exec(cmd, { cwd: __dirname }, cb)
-
-function cb(err, stdout, stderr) {
+function cbCommand(err, stdout, stderr) {
   if(err) throw err
 
   console.log(stdout)
