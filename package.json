@@ -24,5 +24,8 @@
   "homepage": "https://github.com/cchamberlain/git-bfg#readme",
   "dependencies": {
     "lodash": "^3.10.0"
+  },
+  "devDependencies": {
+    "request": "^2.58.0"
   }
 }
