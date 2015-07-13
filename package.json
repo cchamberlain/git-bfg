@@ -6,7 +6,8 @@
   "bin": {
     "bfg": "./bin/bfg",
     "bfg-ls": "./bin/bfg-ls",
-    "bfg-clean": "./bin/bfg-clean"
+    "bfg-clean": "./bin/bfg-clean",
+    "bfg-push": "./bin/bfg-clean"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
