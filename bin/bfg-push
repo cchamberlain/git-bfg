@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Overwrite origin with updates
+git push origin --force
