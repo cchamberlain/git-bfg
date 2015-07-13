@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Execute after doing a bfg cleaning
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
