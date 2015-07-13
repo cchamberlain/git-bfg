@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git gc 2>/dev/null
+all_objects=$(git rev-list --all --objects)
+top_objects=$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -r -n | head -10  | awk '{ print $1, $3 }')
+top_object_hashes="$(printf -- "%s\n" "$top_objects" | sed 's/ .*$//g')"
+
+printf -- "MB\tSHA1\t\t\t\t\t\tFILE\n"
+while read -r hash; do
+  printf -- "%d\t%s\n" $(($(printf -- "%s" "$top_objects" | grep $hash | sed 's/^.* //g')/1000)) "$(printf -- "%s" "$all_objects" | grep $hash | sed 's/ /\t/g')"
+done <<< "$top_object_hashes"
