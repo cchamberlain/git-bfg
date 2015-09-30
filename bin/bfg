@@ -6,8 +6,8 @@ var args = process.argv.slice(2)
   , path = require("path")
   , fs = require("fs")
   , exec = require("child_process").exec
-  , bfgUrl = "http://repo1.maven.org/maven2/com/madgag/bfg/1.12.3/bfg-1.12.3.jar"
-  , bfgPath = path.join(__dirname, "bfg-1.12.3.jar")
+  , bfgUrl = "http://repo1.maven.org/maven2/com/madgag/bfg/1.12.5/bfg-1.12.5.jar"
+  , bfgPath = path.join(__dirname, "bfg-1.12.5.jar")
   , command = getCommand()
 
 download(function() {
